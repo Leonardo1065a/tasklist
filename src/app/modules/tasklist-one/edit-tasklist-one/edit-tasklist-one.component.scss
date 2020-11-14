@@ -1,0 +1,50 @@
+.container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+button {
+    margin-left: 10px;
+}
+
+.color-green {
+    background-color: green;
+}
+
+.color-toolbar {
+    background-color: #36322E;
+    color: #fff;
+}
+
+mat-progress-bar {
+    margin-bottom: 15px;
+}
+
+.btn-actions {
+    margin-bottom: 40px;
+}
+
+.btn-come-back {
+    margin-top: 30px;
+}
+
+.footer {
+    width: 100%;
+    .create, .update {
+        h3 {
+            color: #3B3934;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        p {
+            color: #F16550;
+            font-size: 16px;
+            display: block;
+            font-weight: 600;
+        }
+    }
+}

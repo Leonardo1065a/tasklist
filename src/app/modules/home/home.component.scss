@@ -1,0 +1,13 @@
+.btn-home {
+    width: 100%;
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+    top: 50%;
+    position: fixed;
+    transform: translateY(-50px);
+    button {
+        padding: 50px 20%;
+        margin: 0 2%;
+    }
+}

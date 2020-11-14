@@ -1,0 +1,42 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" class="color-toolbar">
+  <span>{{ task.tpStatus == 1 ? 'In Progress' : 'Finished' }}</span>
+ </mat-toolbar>
+<mat-progress-bar mode="indeterminate" *ngIf="progress"></mat-progress-bar>
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div class="container"> 
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="nmTask" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="dsTask"></textarea>
+    </mat-form-field>
+
+    <mat-dialog-actions class="btn-actions" align="end" *ngIf="!isFinished">
+      <button mat-button mat-dialog-close [disabled]="progress">Cancel</button>
+      <button mat-flat-button class="btn-save" [disabled]="progress" type="submit">Save</button>
+    </mat-dialog-actions>
+
+    <div class="footer" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="create">
+        <h3>Created</h3>
+        <p>{{ task.dtCriacao | date: 'dd/MM/yyyy' }} at {{ task.dtCriacao | date: 'HH:mm' }}</p>
+      </div>
+      <div class="create" *ngIf="!isFinished">
+        <h3>Last update</h3>
+        <p>{{ task.dtEdicao | date: 'dd/MM/yyyy' }} at {{ task.dtEdicao | date: 'HH:mm' }}</p>
+      </div>
+      <div class="create" *ngIf="isFinished">
+        <h3>Finished</h3>
+        <p>{{ task.dtEdicao | date: 'dd/MM/yyyy' }} at {{ task.dtEdicao | date: 'HH:mm' }}</p>
+      </div>
+    </div>
+
+    <mat-dialog-actions class="btn-come-back" align="end" *ngIf="isFinished">
+      <button mat-stroked-button mat-dialog-close color="warn" [disabled]="progress">Close</button>
+    </mat-dialog-actions>
+
+  </div>
+</form>

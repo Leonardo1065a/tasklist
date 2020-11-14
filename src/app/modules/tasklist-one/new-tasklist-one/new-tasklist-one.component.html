@@ -1,0 +1,14 @@
+<mat-progress-bar mode="indeterminate" *ngIf="progress"></mat-progress-bar>
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div class="container">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="nmTask" required />
+    </mat-form-field>
+
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close [disabled]="progress">Cancel</button>
+      <button mat-flat-button class="btn-save" [disabled]="progress" type="submit">Save</button>
+    </mat-dialog-actions>
+  </div>
+</form>
