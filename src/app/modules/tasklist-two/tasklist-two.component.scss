@@ -3,6 +3,8 @@
 .container {
     margin-top: 50px;
     padding: 0;
+    height: calc(100vh - 170px);
+    overflow: auto;
     mat-form-field {
         width: 100%;
     }
@@ -16,7 +18,7 @@
   .body-panel {
     width: 100%;
     margin-top:10px ;
-    .create {
+    .create, .body-descriotion {
         h3 {
             color: $color-secondary;
             font-size: 16px;
@@ -29,19 +31,13 @@
             font-weight: 600;
         }
     }
+    .body-descriotion {
+        p {
+            font-size: 16px;
+        }
+    }
 }
 
 .title-panel {
     margin: -3px 5px;
-}
-
-.remove {
-    cursor: pointer;
-    mat-icon {
-      color: $color-default;
-    }
-}
-
-.remove:focus {
-outline: none;
 }

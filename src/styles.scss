@@ -62,3 +62,14 @@ html, body, h3, p {
       outline: none;
     }
   }
+
+  .remove {
+    cursor: pointer;
+    mat-icon {
+      color: $color-default;
+    }
+}
+
+.remove:focus {
+    outline: none;
+}

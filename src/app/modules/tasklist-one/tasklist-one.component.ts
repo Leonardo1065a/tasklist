@@ -18,6 +18,7 @@ import { MatDialog } from '@angular/material';
 export class TasklistOneComponent {
   todo: Task[] = [];
   done: Task[] = [];
+  doing: Task[] = [];
   progress: boolean;
   private _listTask: Task[] = [];
 
@@ -44,7 +45,7 @@ export class TasklistOneComponent {
       );
       const nrPosition = event.currentIndex;
       let task = event.container.data[nrPosition];
-      this.updateTrask({...task, nrPosition});
+      this.updateTrask({...task, nrPosition, tpStatus: parseInt(event.container.id)});
     }
   }
 
@@ -106,25 +107,19 @@ export class TasklistOneComponent {
     });
     this.todo = list.filter((i) => i.tpStatus === 1);
     this.done = list.filter((i) => i.tpStatus === 2);
+    this.doing = list.filter((i) => i.tpStatus === 3);
   }
 
   private updateTrask(task: Task) {
     this.setProgress(true);
     this.tasklistService
-      .put({
-        ...task,
-        tpStatus: this.updateStatus(task)
-      })
+      .put(task)
       .subscribe((res) => {
         const index = this._listTask.findIndex(i => i.id === res.id);
         this._listTask[index] = res;
         this.separateList(this._listTask);
         this.setProgress(false);
       });
-  }
-
-  private updateStatus(task: Task) {
-    return task.tpStatus === 1 ? 2 : 1;
   }
 
   private exist(value): boolean{

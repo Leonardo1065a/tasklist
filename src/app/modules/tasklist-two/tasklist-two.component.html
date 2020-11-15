@@ -16,7 +16,7 @@
               <span class="color-defaut title-panel" [ngClass]="{'finished': isFinished(task.tpStatus)}">{{ task.nmTask }}</span>
             </mat-panel-title>
             <mat-panel-description>
-              <span>{{ isFinished(task.tpStatus) ? 'Finished' : 'In Progress' }}</span>
+              <span>Status: {{ isFinished(task.tpStatus) ? 'Done' : 'To do' }}</span>
             </mat-panel-description>
             <button mat-icon-button class="remove" (click)="edit(task); $event.stopPropagation()" *ngIf="!isFinished(task.tpStatus)">
               <mat-icon>edit</mat-icon>
@@ -25,7 +25,12 @@
               <mat-icon>clear</mat-icon>
             </button>
           </mat-expansion-panel-header>
-          {{task.dsTask}}
+          <div class="body-panel">
+            <div class="body-descriotion">
+              <h3>Description</h3>
+              <p>{{ task.dsTask }}</p>
+            </div>
+          </div>
           <div class="body-panel">
             <div class="create">
               <h3>Created</h3>

@@ -4,7 +4,9 @@ import { Observable, throwError, pipe } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
-const API_BASE = 'http://localhost:8080/tasks';
+import { environment } from './../../environments/environment';
+
+const API_BASE = environment.URL;
 
 @Injectable({
     providedIn: 'root'

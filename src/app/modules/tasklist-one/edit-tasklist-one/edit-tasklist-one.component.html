@@ -1,5 +1,9 @@
 <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" class="color-toolbar">
-  <span>{{ task.tpStatus == 1 ? 'In Progress' : 'Finished' }}</span>
+  <ng-container [ngSwitch]="task.tpStatus">
+    <span *ngSwitchCase="1">To do</span>
+    <span *ngSwitchCase="2">Done</span>
+    <span *ngSwitchCase="3">Doing</span>
+  </ng-container>
  </mat-toolbar>
 <mat-progress-bar mode="indeterminate" *ngIf="progress"></mat-progress-bar>
 <form [formGroup]="form" (ngSubmit)="save()">
@@ -16,10 +20,10 @@
 
     <mat-dialog-actions class="btn-actions" align="end" *ngIf="!isFinished">
       <button mat-button mat-dialog-close [disabled]="progress">Cancel</button>
-      <button mat-flat-button class="btn-save" [disabled]="progress" type="submit">Save</button>
+      <button mat-flat-button class="btn-save" [disabled]="progress" type="submit">Update</button>
     </mat-dialog-actions>
 
-    <div class="footer" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="footer-painel" fxLayout="row" fxLayoutAlign="space-between center">
       <div class="create">
         <h3>Created</h3>
         <p>{{ task.dtCriacao | date: 'dd/MM/yyyy' }} at {{ task.dtCriacao | date: 'HH:mm' }}</p>
