@@ -34,7 +34,7 @@ export class TasklistOneComponent {
         event.currentIndex
       );
       const nrPosition = event.currentIndex;
-      let task = event.container.data[nrPosition];
+      const task = event.container.data[nrPosition];
       this.tasklistService.put({...task, nrPosition}).subscribe();
     } else {
       transferArrayItem(
@@ -44,7 +44,7 @@ export class TasklistOneComponent {
         event.currentIndex
       );
       const nrPosition = event.currentIndex;
-      let task = event.container.data[nrPosition];
+      const task = event.container.data[nrPosition];
       this.updateTrask({...task, nrPosition, tpStatus: parseInt(event.container.id)});
     }
   }

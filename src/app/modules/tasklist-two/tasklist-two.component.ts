@@ -2,7 +2,7 @@ import { NewTasklistTwoComponent } from './new-tasklist-two/new-tasklist-two.com
 import { Task } from './../../models/task.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskListService } from './../../services/tasklist.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatCheckboxChange, MatDialog } from '@angular/material';
 
 @Component({
@@ -10,7 +10,7 @@ import { MatCheckboxChange, MatDialog } from '@angular/material';
   templateUrl: './tasklist-two.component.html',
   styleUrls: ['./tasklist-two.component.scss']
 })
-export class TasklistTwoComponent implements OnInit {
+export class TasklistTwoComponent {
   progress: boolean;
   form: FormGroup;
   listTask: Task[] = [];
@@ -21,8 +21,6 @@ export class TasklistTwoComponent implements OnInit {
   ) { 
     this.buildForm();
     this.getList();
-  }
-  ngOnInit() {
   }
 
   private buildForm(): void {
@@ -44,10 +42,6 @@ export class TasklistTwoComponent implements OnInit {
       this.listTask = res;
       this.setProgress(false);
     });
-  }
-
-  save() {
-
   }
 
   edit(task: Task) {
