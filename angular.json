@@ -138,5 +138,10 @@
       }
     }
   },
-  "defaultProject": "tasklist"
+  "defaultProject": "tasklist",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
