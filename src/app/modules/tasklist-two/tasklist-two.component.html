@@ -1,3 +1,53 @@
-<p>
-  tasklist-two works!
-</p>
+<mat-progress-bar mode="indeterminate" *ngIf="progress"></mat-progress-bar>
+
+<div class="container" fxLayout="row" fxLayoutAlign="center center">
+  <div class="col-md-9">
+    <mat-accordion>
+      <ng-container *ngFor="let task of listTask">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-checkbox color="warn" 
+                (click)="$event.stopPropagation()" 
+                (keydown)="$event.stopPropagation()"
+                [checked]="isFinished(task.tpStatus)" 
+                (change)="changeTask($event, task)">
+              </mat-checkbox>
+              <span class="color-defaut title-panel" [ngClass]="{'finished': isFinished(task.tpStatus)}">{{ task.nmTask }}</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              <span>{{ isFinished(task.tpStatus) ? 'Finished' : 'In Progress' }}</span>
+            </mat-panel-description>
+            <button mat-icon-button class="remove" (click)="edit(task); $event.stopPropagation()" *ngIf="!isFinished(task.tpStatus)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button class="remove" (click)="remove(task.id); $event.stopPropagation()">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </mat-expansion-panel-header>
+          {{task.dsTask}}
+          <div class="body-panel">
+            <div class="create">
+              <h3>Created</h3>
+              <p>{{ task.dtCriacao | date: 'dd/MM/yyyy' }} at {{ task.dtCriacao | date: 'HH:mm' }}</p>
+            </div>
+            <div class="create" *ngIf="!isFinished(task.tpStatus)">
+              <h3>Last update</h3>
+              <p>{{ task.dtEdicao | date: 'dd/MM/yyyy' }} at {{ task.dtEdicao | date: 'HH:mm' }}</p>
+            </div>
+            <div class="create" *ngIf="isFinished(task.tpStatus)">
+              <h3>Finished</h3>
+              <p>{{ task.dtConclusao | date: 'dd/MM/yyyy' }} at {{ task.dtConclusao | date: 'HH:mm' }}</p>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>  
+  </div>  
+</div>
+
+<footer class="footer">
+  <div fxLayout="column" fxLayoutAlign="end center">
+    <button mat-flat-button class="button-default btn-add" (click)="openDialogAdd()">+ Add</button>
+  </div>
+</footer>

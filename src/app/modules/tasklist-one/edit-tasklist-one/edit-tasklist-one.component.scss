@@ -1,3 +1,5 @@
+@import '../../../utilities/variables';
+
 .container {
     width: 100%;
     margin-top: 20px;
@@ -11,13 +13,9 @@ button {
     margin-left: 10px;
 }
 
-.color-green {
-    background-color: green;
-}
-
 .color-toolbar {
-    background-color: #36322E;
-    color: #fff;
+    background-color: rgba(54, 50, 46, 0.6);
+    color: $white;
 }
 
 mat-progress-bar {
@@ -36,12 +34,12 @@ mat-progress-bar {
     width: 100%;
     .create, .update {
         h3 {
-            color: #3B3934;
+            color: $color-secondary;
             font-size: 18px;
             font-weight: bold;
         }
         p {
-            color: #F16550;
+            color: $color-default;
             font-size: 16px;
             display: block;
             font-weight: 600;

@@ -65,9 +65,7 @@ export class TasklistOneComponent {
     const dialogRef = this.dialog.open(EditTasklistOneComponent, {
       width: '600px',
       height: '420px',
-      data: {
-        task
-      }
+      data: task
     });
 
     dialogRef.afterClosed().subscribe(result => {

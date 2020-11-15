@@ -15,13 +15,13 @@ export class EditTasklistOneComponent implements OnInit {
   progress: boolean;
   isFinished: boolean;
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Data,
+    @Inject(MAT_DIALOG_DATA) private _task: Task,
     private _fb: FormBuilder,
     private taskListService: TaskListService,
     public dialogRef: MatDialogRef<EditTasklistOneComponent>
   ) { 
     this.buildForm();
-    this.form.patchValue(data.task);
+    this.form.patchValue(_task);
     if(this.task.tpStatus == 2){
       this.isFinished = true;
       this.disabledFilds();
@@ -58,7 +58,7 @@ export class EditTasklistOneComponent implements OnInit {
   }
 
   get task(): Task {
-    return this.data.task;
+    return this._task;
   }
 
 }

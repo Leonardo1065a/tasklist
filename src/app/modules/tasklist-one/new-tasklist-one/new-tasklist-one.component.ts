@@ -24,12 +24,7 @@ export class NewTasklistOneComponent {
     this.form = this._fb.group({
       nmTask: [null, Validators.required],
       tpStatus: [1],
-      id: [null],
-	    dsTask: [null],
-	    dtCriacao: [null],
-	    dtEdicao: [null],
-	    dtRemocao: [null],
-	    dtConclusao: [null]
+	    dsTask: [null]
     });
   }
 

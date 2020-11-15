@@ -1,0 +1,47 @@
+@import '../../utilities/variables';
+
+.container {
+    margin-top: 50px;
+    padding: 0;
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.finished{
+    text-decoration: line-through;
+    color: $color-secondary;
+  }
+
+  .body-panel {
+    width: 100%;
+    margin-top:10px ;
+    .create {
+        h3 {
+            color: $color-secondary;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        p {
+            color: $color-default;
+            font-size: 14px;
+            display: block;
+            font-weight: 600;
+        }
+    }
+}
+
+.title-panel {
+    margin: -3px 5px;
+}
+
+.remove {
+    cursor: pointer;
+    mat-icon {
+      color: $color-default;
+    }
+}
+
+.remove:focus {
+outline: none;
+}

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600;1,800&display=swap');
+@import './app/utilities/variables';
 
 html, body, h3, p {
     font-family: 'Nunito', sans-serif;
@@ -15,21 +16,49 @@ html, body, h3, p {
 }
 
 .color-white {
-    color: #fff;
+    color: $white;
 }
 
 .color-gradinte-default {
-    background-color: #F16550;
-    background-image: linear-gradient(to right, #e66238, #F16550);
+    background-color: $color-default;
+    background-image: linear-gradient(to right, #e66238, $color-default);
 }
 
 .button-default {
-    background-color: #F16550;
-    color: #fff;
+    background-color: $color-default;
+    color: $white;
 }
 
 .btn-save {
-    background: #F16550;
-    color: #fff;
+    background: $color-default;
+    color: $white;
     padding: 0 30px !important;
 }
+
+.color-defaut {
+    color: $color-default;
+}
+
+.col-md-6, .col-md-3, .col-md-9 {
+    float: left;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $white;
+    padding-top: 20px;
+    .btn-add {
+      letter-spacing: 1px;
+      font-weight: 600;
+      border-radius: 20px 20px 0 0;
+      font-size: 18px;
+      max-width: 90%;
+      width: 400px;
+      height: 50px;
+    }
+    .btn-add:focus {
+      outline: none;
+    }
+  }
