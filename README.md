@@ -27,4 +27,4 @@ Obs.: As versões utilizadas estão listadas acima.
 
 - Se for tema one, você utilizará o Drag and Drop, para alterar o estado da  task. onde a clicar você poderá ver o modo de edição, caso a task não esteja comcluída. e você terá a opção de  remover uma task. E para Adicionar, basta  clicar no botão "+ Add", que os campos estaram disponiveis para criação da task.
 
-= No caso da escolhar for o tema two, será listados todas a s tasks, onde você poderam apenas no checkbox, marcar e desmarcar, para  task conclída ou não. Ao clicar, vai abrir uma caixa abaixo, com as informações da mesma. E pode remover e editar, clicando nos icones, no lado esquerdo da tela, de  cada item. Para adiconar, bsta clicar no botão "+add" e preencher os campos necessarios.
+- No caso da escolhar for o tema two, será listados todas a s tasks, onde você poderam apenas no checkbox, marcar e desmarcar, para  task conclída ou não. Ao clicar, vai abrir uma caixa abaixo, com as informações da mesma. E pode remover e editar, clicando nos icones, no lado esquerdo da tela, de  cada item. Para adiconar, bsta clicar no botão "+add" e preencher os campos necessarios.
