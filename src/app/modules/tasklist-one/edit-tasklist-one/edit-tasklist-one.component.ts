@@ -1,5 +1,4 @@
 import { Task } from './../../../models/task.model';
-import { Data } from './../../../models/data.model';
 import { TaskListService } from './../../../services/tasklist.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
