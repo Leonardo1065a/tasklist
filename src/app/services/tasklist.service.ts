@@ -6,37 +6,37 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from './../../environments/environment';
 
-const API_BASE = environment.URL;
-
 @Injectable({
     providedIn: 'root'
 })
 export class TaskListService {
-
-    constructor(private http: HttpClient) { }
+    private _tasksUrl: string;
+    constructor(private http: HttpClient) { 
+      this._tasksUrl = `${environment.apiUrl}/tasks`;
+    }
 
     get(): Observable<Task[]>{
-      return this.http.get<Task[]>(`${ API_BASE }`)
+      return this.http.get<Task[]>(`${ this._tasksUrl }`)
         .pipe(this.result());
     }
 
     getById(id: number): Observable<Task>{
-        return this.http.get<Task[]>(`${ API_BASE }/${id}`)
+        return this.http.get<Task[]>(`${ this._tasksUrl }/${id}`)
           .pipe(this.result());
       }
   
     post(task: Task): Observable<Task> {
-      return this.http.post(`${ API_BASE }`, task)
+      return this.http.post(`${ this._tasksUrl }`, task)
         .pipe(this.result());
     }
   
     put(task: Task): Observable<Task> {
-      return this.http.put(`${ API_BASE }/${task.id}`, task)
+      return this.http.put(`${ this._tasksUrl }/${task.id}`, task)
         .pipe(this.result());
     }
   
     delete(id: number): Observable<Object> {
-      return this.http.delete(`${ API_BASE }/${id}`);
+      return this.http.delete(`${ this._tasksUrl }/${id}`);
     }
   
     result(): any{

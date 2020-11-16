@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL: 'https://new-tasklist-api.herokuapp.com/tasks'
+  apiUrl: 'http://localhost:8080'
 };
 
 /*
